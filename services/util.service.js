@@ -10,7 +10,7 @@ module.exports.to = async promise => {
   return [null, res];
 };
 
-module.exports.ReE = function(res, err, code) {
+module.exports.ReE = (res, err, code) => {
   // Error Web Response
   if (typeof err == "object" && typeof err.message != "undefined") {
     err = err.message;
@@ -21,7 +21,7 @@ module.exports.ReE = function(res, err, code) {
   return res.json({ success: false, error: err });
 };
 
-module.exports.ReS = function(res, data, code) {
+module.exports.ReS = (res, data, code) => {
   // Success Web Response
   let send_data = { success: true };
 
@@ -34,7 +34,7 @@ module.exports.ReS = function(res, data, code) {
   return res.json(send_data);
 };
 
-module.exports.TE = TE = function(err_message, log) {
+module.exports.TE = TE = (err_message, log) => {
   // TE  = Throw Error
   if (log === true) {
     console.error(err_message);

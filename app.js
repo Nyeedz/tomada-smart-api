@@ -44,20 +44,20 @@ app.use(cors());
 
 app.use("/v1", v1);
 
-app.use("/", function(req, res) {
+app.use("/", (req, res) => {
   res.statusCode = 200; //send the appropriate status code
   res.json({ status: "success", message: "Parcel Pending API", data: {} });
 });
 
 // Erro 404
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   var err = new Error("Not Found");
   err.status = 404;
   next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};

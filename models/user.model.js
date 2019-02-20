@@ -52,12 +52,12 @@ module.exports = (sequelize, DataTypes) => {
 
   Model.prototype.comparePassword = async function(pw) {
     let err, pass;
-    if (!this.password) TE("password not set");
+    if (!this.password) TE("Senha não definida");
 
     [err, pass] = await to(bcrypt_p.compare(pw, this.password));
     if (err) TE(err);
 
-    if (!pass) TE("invalid password");
+    if (!pass) TE("Senha inválida");
 
     return this;
   };
