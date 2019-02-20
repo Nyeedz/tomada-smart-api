@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const UserController = require("../controllers/user.controller");
-const CompanyController = require("../controllers/company.controller");
+const ComodoController = require("../controllers/comodo.controller");
 const HomeController = require("../controllers/home.controller");
 
 const custom = require("./../middleware/custom");
@@ -39,33 +39,33 @@ router.delete(
 router.post("/users/login", UserController.login);
 
 router.post(
-  "/companies",
+  "/comodos",
   passport.authenticate("jwt", { session: false }),
-  CompanyController.create
+  ComodoController.create
 ); // C
 router.get(
-  "/companies",
+  "/comodos",
   passport.authenticate("jwt", { session: false }),
-  CompanyController.getAll
+  ComodoController.getAll
 ); // R
 
 router.get(
-  "/companies/:company_id",
+  "/comodos/:comodo_id",
   passport.authenticate("jwt", { session: false }),
-  custom.company,
-  CompanyController.get
+  custom.comodo,
+  ComodoController.get
 ); // R
 router.put(
-  "/companies/:company_id",
+  "/comodos/:comodo_id",
   passport.authenticate("jwt", { session: false }),
-  custom.company,
-  CompanyController.update
+  custom.comodo,
+  ComodoController.update
 ); // U
 router.delete(
-  "/companies/:company_id",
+  "/comodos/:comodo_id",
   passport.authenticate("jwt", { session: false }),
-  custom.company,
-  CompanyController.remove
+  custom.comodo,
+  ComodoController.remove
 ); // D
 
 router.get(

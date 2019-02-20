@@ -1,17 +1,17 @@
-const Company = require("./../models").Company;
+const Comodo = require("./../models").Comodo;
 const { to, ReE, ReS } = require("../services/util.service");
 
-let company = async (req, res, next) => {
-  let company_id, err, company;
-  company_id = req.params.company_id;
+let comodo = async (req, res, next) => {
+  let comodo_id, err, comodo;
+  comodo_id = req.params.comodo_id;
 
-  [err, company] = await to(Company.findOne({ where: { id: company_id } }));
+  [err, comodo] = await to(Comodo.findOne({ where: { id: comodo_id } }));
   if (err) return ReE(res, "Erro ao buscar o cômodo");
 
-  if (!company) return ReE(res, `Cômodo com o id ${company_id} não encontrado`);
+  if (!comodo) return ReE(res, `Cômodo com o id ${comodo_id} não encontrado`);
   let user, users_array, users;
   user = req.user;
-  [err, users] = await to(company.getUsers());
+  [err, users] = await to(comodo.getUsers());
 
   users_array = users.map(obj => String(obj.user));
 
@@ -21,7 +21,7 @@ let company = async (req, res, next) => {
       `Usuário não tem permissão para ler essa página com o id ${app_id}`
     );
 
-  req.company = company;
+  req.comodo = comodo;
   next();
 };
-module.exports.company = company;
+module.exports.comodo = comodo;

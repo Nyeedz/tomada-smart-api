@@ -31,8 +31,8 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Model.associate = function(models) {
-    this.Companies = this.belongsToMany(models.Company, {
-      through: "UserCompany"
+    this.Comodos = this.belongsToMany(models.Comodo, {
+      through: "UserComodo"
     });
   };
 
