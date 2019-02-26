@@ -644,11 +644,11 @@
         "user": {
           "type": "object",
           "properties": {
-            "first": {
+            "nome": {
               "type": "string",
               "example": "John"
             },
-            "last": {
+            "sobrenome": {
               "type": "string",
               "example": "doe"
             },
@@ -683,11 +683,11 @@
     "UpdateUserBody": {
       "type": "object",
       "properties": {
-        "first": {
+        "nome": {
           "type": "string",
           "example": "John"
         },
-        "last": {
+        "sobrenome": {
           "type": "string",
           "example": "doe"
         },

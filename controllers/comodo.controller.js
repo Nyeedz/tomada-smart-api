@@ -10,7 +10,7 @@ const create = async (req, res) => {
   [err, comodo] = await to(Comodo.create(comodo_info));
   if (err) return ReE(res, err, 422);
 
-  comodo.addUser(user, { through: { status: "started" } })[
+  comodo.addUser(user, { through: { status: "Iniciado" } })[
     (err, comodo)
   ] = await to(comodo.save());
   if (err) return ReE(res, err, 422);

@@ -4,8 +4,8 @@ const Dashboard = (req, res) => {
   let user = req.user.id;
   return res.json({
     success: true,
-    message: "it worked",
-    data: "user name is :"
+    message: "Funcionou",
+    data: "usuário é :" + user
   });
 };
 module.exports.Dashboard = Dashboard;

@@ -2,7 +2,7 @@ const { TE, to } = require("../services/util.service");
 
 module.exports = (sequelize, DataTypes) => {
   var Model = sequelize.define("Comodo", {
-    name: DataTypes.STRING
+    nome: DataTypes.STRING
   });
 
   Model.associate = function(models) {

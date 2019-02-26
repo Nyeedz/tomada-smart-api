@@ -46,7 +46,13 @@ app.use("/v1", v1);
 
 app.use("/", (req, res) => {
   res.statusCode = 200; //send the appropriate status code
-  res.json({ status: "success", message: "Parcel Pending API", data: {} });
+  res.json({
+    status: "success",
+    message: "Bem vindo a API SmartSocket",
+    data: {
+      description: "Está API foi feita para o tcc da Unisal de 2019"
+    }
+  });
 });
 
 // Erro 404

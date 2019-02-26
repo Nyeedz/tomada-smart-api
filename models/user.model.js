@@ -7,8 +7,8 @@ const CONFIG = require("../config/config");
 
 module.exports = (sequelize, DataTypes) => {
   var Model = sequelize.define("User", {
-    first: DataTypes.STRING,
-    last: DataTypes.STRING,
+    nome: DataTypes.STRING,
+    sobrenome: DataTypes.STRING,
     email: {
       type: DataTypes.STRING,
       allowNull: true,
