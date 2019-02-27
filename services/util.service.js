@@ -18,7 +18,7 @@ module.exports.ReE = (res, err, code) => {
 
   if (typeof code !== "undefined") res.statusCode = code;
 
-  return res.json({ success: false, error: err });
+  return res.json({ success: false, error: err, code: code });
 };
 
 module.exports.ReS = (res, data, code) => {

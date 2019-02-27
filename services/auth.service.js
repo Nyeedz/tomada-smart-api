@@ -58,7 +58,7 @@ const authUser = async userInfo => {
   auth_info.status = "login";
   unique_key = getUniqueKeyFromBody(userInfo);
 
-  if (!unique_key) TE("Por favoe entre com o e-mail ou telefone para logar");
+  if (!unique_key) TE("Por favor entre com o e-mail ou telefone para logar");
 
   if (!userInfo.password) TE("Por favo entre a senha para logar");
 
